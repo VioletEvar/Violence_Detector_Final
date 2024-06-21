@@ -1,0 +1,20 @@
+[data]
+root=./data/
+pred=./data/test/
+
+
+[log]
+train_log_path=./train_logs/
+train_log_name=resnet18_pretrain_test
+test_log_path=./test_logs/
+
+[device]
+gpu_enabled=true
+gpu_id=1
+
+[training_settings]
+learning_rate=lr
+batch_size=32
+
+version=4
+ckpt_name = resnet18_pretrain_test-epoch=38-val_loss=0.04.ckpt
