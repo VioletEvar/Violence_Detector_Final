@@ -32,9 +32,10 @@ conda install pillow
 将dataset.py中的data_root之后的地址修改为自己数据所在地址；
 将test.py中的ckpt_root和ckpt_path修改为train_logs对应地址
 
-## config设置
-
-确保配置文件 `config.txt`正确，内容如下：
+## 测试脚本运行
+* 注意: 将config.txt中信息修改为自己对应的data,log,device,training_settings信息；
+* 注意：使用--classify 参数时，需先在run_classify.py所在目录下创建image_paths.txt文件用于存放图片绝对地址，一行一个地址。
+* 注意：使用--classify2 参数时，需要在config.txt的data-pred中填入预测图片文件夹路径，或是使用--img参数直接进行输入。
 
     ```
     [data]
