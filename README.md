@@ -26,12 +26,12 @@ conda install pillow
 ```
 
 ## 文件组织
-将所有py程序放在名为Violence-Detector的文件夹下；同时，建立data文件夹放在Violence-Detector中，将下载的数据放在data文件夹里；代码运行时将自动创建train_logs文件夹
-注意：有两个可运行版本，带old前缀的为我们的第一版，run_classify.py使用方式与最新版本略有区别，详情见old_README.md
+* 将所有py程序放在名为Violence-Detector的文件夹下；同时，建立data文件夹放在Violence-Detector中，将下载的数据放在data文件夹里；代码运行时将自动创建train_logs文件夹
+* 注意：有两个可运行版本，带old前缀的为我们的第一版，run_classify.py使用方式与最新版本略有区别，详情见old_README.md
 
 ## 地址修改
-将dataset.py中的data_root之后的地址修改为自己数据所在地址；
-将test.py中的ckpt_root和ckpt_path修改为train_logs对应地址
+* 将dataset.py中的data_root之后的地址修改为自己数据所在地址；
+* 将test.py中的ckpt_root和ckpt_path修改为train_logs对应地址
 
 ## 测试脚本运行
 * 注意: 将config.txt中信息修改为自己对应的data,log,device,training_settings信息；
