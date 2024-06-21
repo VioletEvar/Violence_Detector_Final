@@ -37,28 +37,6 @@ conda install pillow
 * 注意：使用--classify 参数时，需先在run_classify.py所在目录下创建image_paths.txt文件用于存放图片绝对地址，一行一个地址。
 * 注意：使用--classify2 参数时，需要在config.txt的data-pred中填入预测图片文件夹路径，或是使用--img参数直接进行输入。
 
-    ```
-    [data]
-    root=./data/
-    pred=./data/test/
-
-
-    [log]
-    train_log_path=./train_logs/
-    train_log_name=resnet18_pretrain_test
-    test_log_path=./test_logs/
-
-    [device]
-    gpu_enabled=true
-    gpu_id=1
-
-    [training_settings]
-    learning_rate=lr
-    batch_size=32
-    version = 1
-    ckpt_name = checkpoint.ckpt
-    ```
-
 ## 训练模型
 
 要训练模型，运行：
