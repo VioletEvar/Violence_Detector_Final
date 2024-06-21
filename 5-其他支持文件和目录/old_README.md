@@ -1,5 +1,5 @@
 # 老版本区别
-run_classify不支持文件夹方式的图像识别指令，其余部分与新版相同
+run_classify仅支持路径文件方式的图像识别指令，其余部分与新版相同
 
 # 训练
 python run_classify.py --train
