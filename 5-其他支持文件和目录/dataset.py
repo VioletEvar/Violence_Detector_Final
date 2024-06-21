@@ -9,6 +9,7 @@ from pytorch_lightning import LightningDataModule
 # 包含真值的图像数据
 class CustomDataset(Dataset):
     def __init__(self, split,data_root):
+        
         assert split in ["train", "val", "test"]
         self.data = [os.path.join(data_root, split+'/', i) for i in os.listdir(data_root + split)]
         if split == "train":
@@ -34,13 +35,13 @@ class CustomDataset(Dataset):
 
  
 class CustomDataModule(LightningDataModule):
-    def __init__(self, batch_size=32, num_workers=4, data_root="./data/"):
+    def __init__(self, batch_size=32, num_workers=4,data_root="./data/"):
         super().__init__()
         self.batch_size = batch_size
         self.num_workers = num_workers
         self.data_root=data_root
 
-    def setup(self):
+    def setup(self, stage=None):
         # 分割数据集、应用变换等
         # 创建 training, validation数据集
         self.train_dataset = CustomDataset("train",self.data_root)
@@ -74,7 +75,6 @@ class PredDataset(Dataset):
         x = Image.open(img_path)
         x = self.transforms(x)
         return x
-        
- # predataset的调用接口   
+    
 def pred_dataloader(pred):
     return DataLoader(PredDataset(pred), batch_size=1, shuffle=False, num_workers=4)
